@@ -8,36 +8,36 @@ import java.util.ResourceBundle;
 public class ResourcesBundleTest {
 
     @Test
-    void testResourcesBundel() {
-        var resourceBundle = ResourceBundle.getBundle("massage");
+    void testResourcesBundle() {
+        var resourceBundle = ResourceBundle.getBundle("message");
 
         System.out.println(resourceBundle.getString("hello"));
         System.out.println(resourceBundle.getString("goodbye"));
     }
 
     @Test
-    void testResourcesBundelBahasaIndonesia() {
+    void testResourcesBundleBahasaIndonesia() {
         var indonesia = new Locale("id", "ID");
-        var resourceBundle = ResourceBundle.getBundle("massage", indonesia);
+        var resourceBundle = ResourceBundle.getBundle("message", indonesia);
 
         System.out.println(resourceBundle.getString("hello"));
         System.out.println(resourceBundle.getString("goodbye"));
     }
 
     @Test
-    void testResourcesBundelNotFound() {
+    void testResourcesBundleNotFound() {
         var usa = new Locale("en", "US");
-        var resourceBundle = ResourceBundle.getBundle("massage", usa);
+        var resourceBundle = ResourceBundle.getBundle("message", usa);
 
         System.out.println(resourceBundle.getString("hello"));
         System.out.println(resourceBundle.getString("goodbye"));
     }
 
     @Test
-    void testResourcesBundelMultipleTimes() {
+    void testResourcesBundleMultipleTimes() {
         var usa = new Locale("en", "US");
-        var resourceBundle1 = ResourceBundle.getBundle("massage", usa);
-        var resourceBundle2 = ResourceBundle.getBundle("massage", usa);
+        var resourceBundle1 = ResourceBundle.getBundle("message", usa);
+        var resourceBundle2 = ResourceBundle.getBundle("message", usa);
 
         System.out.println(resourceBundle1 == resourceBundle2);
     }
