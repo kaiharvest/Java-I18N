@@ -32,4 +32,17 @@ class ChoiceFormatTest {
         System.out.println(messageFormat.format(new Object[]{100000}));
     }
 
+    @Test
+    void testChoiceFormatInMessageFormatUS() {
+        var locale = new Locale("en", "US");
+        var resourceBundle = ResourceBundle.getBundle("message", locale);
+
+        var pattern = resourceBundle.getString("balance");
+
+        var messageFormat = new MessageFormat(pattern, locale);
+        System.out.println(messageFormat.format(new Object[]{-100000}));
+        System.out.println(messageFormat.format(new Object[]{0}));
+        System.out.println(messageFormat.format(new Object[]{100000}));
+    }
+
 }
